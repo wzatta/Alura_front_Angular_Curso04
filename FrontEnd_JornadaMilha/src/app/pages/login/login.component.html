@@ -1,0 +1,54 @@
+<header>
+  <app-banner
+  src="../../../assets/imagens/banner-login.png"
+  alt="Banner da ela de Login"
+  ></app-banner>
+</header>
+<section class="login-component">
+  <mat-card class="login">
+    <div class="image-container">
+      <figure>
+        <img
+        src="../../../assets/imagens/simbolo-bussola.png"
+        alt="Simbolo de uma Bussola laranja">
+      </figure>
+    </div>
+    <div class="form-container">
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <form [formGroup]="loginForm">
+          <mat-card-content>
+            <mat-form-field appearance="outline">
+              <mat-label for="emailId">E-mail</mat-label>
+              <input matInput
+                     type="email"
+                     id="emailId"
+                     placeholder="Digite Seu E-mail"
+                     formControlName="email">
+            <mat-error *ngIf="loginForm.get('email')?.errors?.['required']">E-mail Obrigatório</mat-error>
+            <mat-error *ngIf="loginForm.get('email')?.errors?.['email']">Formato de E-mail inválido</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label for="senhaId">Senha</mat-label>
+              <input
+              matInput
+              type="password"
+              id="senhaId"
+              placeholder="Digite sua Senha"
+              formControlName="senha">
+              <mat-error *ngIf="loginForm.get('senha')?.errors?.['required']">Senha Obrigatória</mat-error>
+            </mat-form-field>
+          </mat-card-content>
+          <mat-card-actions>
+            <button [disabled]="loginForm.invalid" mat-flat-button color="primary" (click)="login()">
+              ACESSAR MINHA CONTA
+            </button>
+          </mat-card-actions>
+          <P>Ainda não possui conta?
+            <a><strong><u>clique aqui para se Cadastrar</u></strong></a>
+          </P>
+        </form>
+    </div>
+  </mat-card>
+</section>
