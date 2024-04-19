@@ -17,3 +17,14 @@ export interface Depoimento {
     autor: string;
     avatar: string;
 }
+
+export interface PessoaUsuaria {
+  nome: string,
+  bascunebti: string,
+  cpf: string,
+  telefone: string,
+  email: StorageManager,
+  senha: string,
+  cidade: string,
+  estado:UnidadeFederativa
+}
